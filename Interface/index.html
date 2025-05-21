@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morocco Economic Indicators Dashboard</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/dashboard.css" />
+    <link rel="stylesheet" href="/src/styles/charts.css" />
+    <link rel="stylesheet" href="/src/styles/controls.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <img src="/src/assets/logo.svg" alt="Morocco Economic Dashboard" class="logo" />
+          <h1>Morocco Economic<br>Dashboard</h1>
+        </div>
+        <ul class="nav-links">
+          <li class="active" data-page="dashboard">
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </li>
+          <li data-page="predictions">
+            <i class="fas fa-chart-pie"></i>
+            <span>Predictions</span>
+          </li>
+          <li data-page="data">
+            <i class="fas fa-database"></i>
+            <span>Data Management</span>
+          </li>
+          <li data-page="settings">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </li>
+        </ul>
+        <div class="sidebar-footer">
+          <div class="theme-toggle">
+            <i class="fas fa-sun"></i>
+            <span class="toggle-slider">
+              <span class="toggle-button"></span>
+            </span>
+            <i class="fas fa-moon"></i>
+          </div>
+        </div>
+      </nav>
+
+      <main class="content">
+        <header class="content-header">
+          <div class="header-left">
+            <button class="menu-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+            <h2 class="page-title">Dashboard</h2>
+          </div>
+          <div class="header-right">
+            <div class="file-upload-container">
+              <button id="uploadButton" class="btn btn-outline">
+                <i class="fas fa-upload"></i>
+                <span>Upload CSV</span>
+              </button>
+              <input type="file" id="csvFileInput" accept=".csv" hidden />
+            </div>
+            <div class="user-profile">
+              <img src="/src/assets/user-placeholder.jpg" alt="User" />
+            </div>
+          </div>
+        </header>
+
+        <div class="dashboard-container page-container active" id="dashboard">
+          <div class="dashboard-header">
+            <div class="kpi-cards">
+              <div class="kpi-card">
+                <div class="kpi-icon">
+                  <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="kpi-content">
+                  <h3 class="kpi-title">GDP Growth</h3>
+                  <p class="kpi-value">3.2%</p>
+                  <p class="kpi-trend positive">
+                    <i class="fas fa-arrow-up"></i> 0.5%
+                  </p>
+                </div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-icon">
+                  <i class="fas fa-percentage"></i>
+                </div>
+                <div class="kpi-content">
+                  <h3 class="kpi-title">Inflation Rate</h3>
+                  <p class="kpi-value">1.4%</p>
+                  <p class="kpi-trend negative">
+                    <i class="fas fa-arrow-up"></i> 0.2%
+                  </p>
+                </div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="kpi-content">
+                  <h3 class="kpi-title">Unemployment</h3>
+                  <p class="kpi-value">11.9%</p>
+                  <p class="kpi-trend negative">
+                    <i class="fas fa-arrow-up"></i> 0.7%
+                  </p>
+                </div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-icon">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="kpi-content">
+                  <h3 class="kpi-title">Trade Balance</h3>
+                  <p class="kpi-value">-4.2B</p>
+                  <p class="kpi-trend positive">
+                    <i class="fas fa-arrow-up"></i> 0.8B
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="controls-row">
+              <div class="indicator-select-container">
+                <label for="indicatorSelect">Select Indicators</label>
+                <div class="custom-select">
+                  <div class="select-selected">
+                    <span>Select indicators...</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="select-items select-hide" id="indicatorOptions">
+                    <!-- Indicator options will be populated here -->
+                  </div>
+                </div>
+              </div>
+              
+              <div class="time-range-container">
+                <label for="timeRange">Time Period</label>
+                <div class="time-range-controls">
+                  <select id="timeRange" class="form-control">
+                    <option value="1y">Last Year</option>
+                    <option value="5y">Last 5 Years</option>
+                    <option value="10y">Last 10 Years</option>
+                    <option value="all" selected>All Available Data</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="view-controls">
+                <label>View Type</label>
+                <div class="btn-group">
+                  <button class="btn btn-sm active" data-view="line">
+                    <i class="fas fa-chart-line"></i>
+                  </button>
+                  <button class="btn btn-sm" data-view="bar">
+                    <i class="fas fa-chart-bar"></i>
+                  </button>
+                  <button class="btn btn-sm" data-view="area">
+                    <i class="fas fa-chart-area"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="charts-container">
+            <div class="chart-wrapper">
+              <div class="chart-header">
+                <h3 class="chart-title">Economic Indicators Trend</h3>
+                <div class="chart-actions">
+                  <button class="btn btn-icon" id="downloadChartBtn">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="btn btn-icon" id="expandChartBtn">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="mainChart"></canvas>
+                <div class="chart-loader">
+                  <div class="spinner"></div>
+                  <p>Loading data...</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="charts-grid">
+              <!-- Secondary charts will be generated here -->
+            </div>
+          </div>
+        </div>
+
+        <div class="predictions-container page-container" id="predictions">
+          <div class="predictions-header">
+            <h2>Economic Indicators Prediction</h2>
+            <p>Select indicators and prediction horizon to generate forecasts</p>
+          </div>
+          
+          <div class="prediction-controls">
+            <div class="prediction-control-group">
+              <label>Select Indicators for Prediction</label>
+              <div class="indicator-selection" id="predictionIndicators">
+                <!-- Will be populated with indicator checkboxes -->
+              </div>
+            </div>
+            
+            <div class="prediction-control-group">
+              <label for="predictionHorizon">Prediction Horizon</label>
+              <div class="horizon-slider-container">
+                <input type="range" id="predictionHorizon" min="1" max="24" value="12" class="horizon-slider">
+                <div class="horizon-value">
+                  <span id="horizonValue">12</span> months
+                </div>
+              </div>
+            </div>
+            
+            <div class="prediction-control-group">
+              <button id="generatePredictionBtn" class="btn btn-primary">
+                <i class="fas fa-magic"></i> Generate Prediction
+              </button>
+            </div>
+          </div>
+          
+          <div class="prediction-results">
+            <div class="prediction-chart-container">
+              <canvas id="predictionChart"></canvas>
+              <div class="prediction-loader hidden">
+                <div class="spinner"></div>
+                <p>Generating predictions...</p>
+              </div>
+            </div>
+            
+            <div class="prediction-metrics">
+              <h3>Prediction Metrics</h3>
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <h4>Mean Absolute Error</h4>
+                  <p class="metric-value">0.32</p>
+                </div>
+                <div class="metric-card">
+                  <h4>Mean Squared Error</h4>
+                  <p class="metric-value">0.18</p>
+                </div>
+                <div class="metric-card">
+                  <h4>R² Score</h4>
+                  <p class="metric-value">0.87</p>
+                </div>
+                <div class="metric-card">
+                  <h4>Confidence Level</h4>
+                  <p class="metric-value">95%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-management-container page-container" id="data">
+          <div class="data-header">
+            <h2>Data Management</h2>
+            <div class="data-actions">
+              <button class="btn btn-outline" id="refreshDataBtn">
+                <i class="fas fa-sync"></i> Refresh
+              </button>
+              <button class="btn btn-primary" id="uploadNewDataBtn">
+                <i class="fas fa-upload"></i> Upload New Data
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-container">
+            <table class="data-table" id="dataTable">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Indicator</th>
+                  <th>Value</th>
+                  <th>Year-over-Year</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Will be populated with data -->
+              </tbody>
+            </table>
+            <div class="table-loader">
+              <div class="spinner"></div>
+              <p>Loading data...</p>
+            </div>
+          </div>
+          
+          <div class="pagination">
+            <button class="pagination-btn" id="prevPage">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="pagination-info">Page <span id="currentPage">1</span> of <span id="totalPages">5</span></span>
+            <button class="pagination-btn" id="nextPage">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="settings-container page-container" id="settings">
+          <div class="settings-header">
+            <h2>Settings</h2>
+            <p>Configure dashboard settings and preferences</p>
+          </div>
+          
+          <div class="settings-grid">
+            <div class="settings-card">
+              <h3>Display Settings</h3>
+              <div class="settings-form">
+                <div class="form-group">
+                  <label for="chartAnimations">Chart Animations</label>
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="chartAnimations" checked>
+                    <label for="chartAnimations"></label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="darkMode">Dark Mode</label>
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="darkMode">
+                    <label for="darkMode"></label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="decimalPlaces">Decimal Places</label>
+                  <select id="decimalPlaces" class="form-control">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-card">
+              <h3>Prediction Settings</h3>
+              <div class="settings-form">
+                <div class="form-group">
+                  <label for="confidenceInterval">Confidence Interval</label>
+                  <select id="confidenceInterval" class="form-control">
+                    <option value="0.90">90%</option>
+                    <option value="0.95" selected>95%</option>
+                    <option value="0.99">99%</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="modelType">Prediction Model</label>
+                  <select id="modelType" class="form-control">
+                    <option value="auto" selected>Auto (Best Fit)</option>
+                    <option value="arima">ARIMA</option>
+                    <option value="lstm">LSTM</option>
+                    <option value="prophet">Prophet</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-card">
+              <h3>Data Settings</h3>
+              <div class="settings-form">
+                <div class="form-group">
+                  <label for="dataCache">Cache Data</label>
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="dataCache" checked>
+                    <label for="dataCache"></label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="autoRefresh">Auto Refresh</label>
+                  <select id="autoRefresh" class="form-control">
+                    <option value="0">Off</option>
+                    <option value="300000">5 minutes</option>
+                    <option value="900000">15 minutes</option>
+                    <option value="3600000" selected>1 hour</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-card">
+              <h3>Export Settings</h3>
+              <div class="settings-form">
+                <div class="form-group">
+                  <label for="exportFormat">Default Export Format</label>
+                  <select id="exportFormat" class="form-control">
+                    <option value="png" selected>PNG</option>
+                    <option value="jpg">JPG</option>
+                    <option value="pdf">PDF</option>
+                    <option value="csv">CSV</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="chartResolution">Chart Resolution</label>
+                  <select id="chartResolution" class="form-control">
+                    <option value="1">Normal</option>
+                    <option value="2" selected>High</option>
+                    <option value="3">Ultra High</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="settings-actions">
+            <button class="btn btn-outline" id="resetSettingsBtn">Reset to Default</button>
+            <button class="btn btn-primary" id="saveSettingsBtn">Save Settings</button>
+          </div>
+        </div>
+      </main>
+      
+      <div class="modals-container">
+        <div class="modal" id="csvUploadModal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Upload CSV Data</h3>
+              <button class="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+              <div class="upload-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag and drop your CSV file here</p>
+                <p class="or-separator">or</p>
+                <button class="btn btn-outline" id="browseFilesBtn">Browse Files</button>
+                <input type="file" id="modalCsvInput" accept=".csv" hidden />
+              </div>
+              <div class="upload-preview hidden">
+                <div class="file-info">
+                  <i class="fas fa-file-csv"></i>
+                  <div class="file-details">
+                    <h4 id="fileName">data.csv</h4>
+                    <p id="fileSize">240 KB</p>
+                  </div>
+                  <button class="btn btn-icon" id="removeFileBtn">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-outline" id="cancelUploadBtn">Cancel</button>
+              <button class="btn btn-primary" id="confirmUploadBtn">Upload</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

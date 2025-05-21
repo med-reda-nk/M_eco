@@ -1,0 +1,342 @@
+/* Charts Styles */
+
+/* Prediction Chart Container */
+.prediction-chart-container {
+  background-color: var(--neutral-50);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4);
+  position: relative;
+  min-height: 400px;
+  margin-bottom: var(--space-6);
+}
+
+.prediction-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.prediction-loader p {
+  margin-top: var(--space-3);
+  color: var(--neutral-600);
+}
+
+/* Chart Tooltip Custom Styling */
+.custom-tooltip {
+  background-color: var(--neutral-800);
+  color: var(--neutral-100);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-sm);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.custom-tooltip.visible {
+  opacity: 1;
+}
+
+.tooltip-title {
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--neutral-600);
+}
+
+.tooltip-value {
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-1);
+}
+
+.tooltip-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: var(--space-2);
+}
+
+.tooltip-label {
+  margin-right: var(--space-2);
+}
+
+/* Chart Legend Custom Styling */
+.custom-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.legend-item:hover {
+  background-color: var(--neutral-200);
+}
+
+.legend-item.inactive {
+  opacity: 0.5;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: var(--space-2);
+}
+
+/* Chart Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes growUp {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.chart-animate-fade {
+  animation: fadeIn var(--transition-normal);
+}
+
+.chart-animate-grow {
+  animation: growUp var(--transition-normal);
+  transform-origin: bottom;
+}
+
+.chart-animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 1.5s ease-in-out forwards;
+}
+
+/* Chart Export Dialog */
+.export-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.export-dialog.active {
+  display: flex;
+}
+
+.export-container {
+  background-color: var(--neutral-50);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.export-header {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--neutral-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.export-header h3 {
+  font-size: var(--text-xl);
+}
+
+.export-close {
+  font-size: var(--text-2xl);
+  color: var(--neutral-600);
+  cursor: pointer;
+}
+
+.export-body {
+  padding: var(--space-4);
+}
+
+.export-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.export-option {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.export-option:hover {
+  border-color: var(--primary);
+}
+
+.export-option.selected {
+  border-color: var(--primary);
+  background-color: rgba(193, 30, 56, 0.1);
+}
+
+.export-option i {
+  font-size: var(--text-2xl);
+  color: var(--neutral-600);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.export-option.selected i {
+  color: var(--primary);
+}
+
+.export-option p {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.export-footer {
+  padding: var(--space-4);
+  border-top: 1px solid var(--neutral-200);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+/* Chart Fullscreen Mode */
+.fullscreen-chart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--neutral-50);
+  z-index: 100;
+  padding: var(--space-4);
+  display: none;
+  flex-direction: column;
+}
+
+.fullscreen-chart.active {
+  display: flex;
+}
+
+.fullscreen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.fullscreen-close {
+  font-size: var(--text-2xl);
+  color: var(--neutral-600);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.fullscreen-close:hover {
+  background-color: var(--neutral-200);
+}
+
+.fullscreen-body {
+  flex: 1;
+  position: relative;
+}
+
+/* Prediction Metrics */
+.prediction-metrics {
+  margin-top: var(--space-6);
+}
+
+.prediction-metrics h3 {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-xl);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.metric-card {
+  background-color: var(--neutral-50);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.metric-card h4 {
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+  margin-bottom: var(--space-2);
+}
+
+.metric-value {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

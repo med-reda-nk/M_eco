@@ -1,0 +1,243 @@
+/* Dashboard Styles */
+
+/* KPI Cards */
+.dashboard-header {
+  margin-bottom: var(--space-6);
+}
+
+.kpi-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.kpi-card {
+  background-color: var(--neutral-50);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.kpi-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: rgba(193, 30, 56, 0.1);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+  margin-right: var(--space-3);
+}
+
+.kpi-card:nth-child(2) .kpi-icon {
+  background-color: rgba(0, 98, 51, 0.1);
+  color: var(--secondary);
+}
+
+.kpi-card:nth-child(3) .kpi-icon {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+}
+
+.kpi-card:nth-child(4) .kpi-icon {
+  background-color: rgba(243, 178, 41, 0.1);
+  color: var(--accent);
+}
+
+.kpi-content {
+  flex: 1;
+}
+
+.kpi-title {
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+  margin-bottom: var(--space-1);
+}
+
+.kpi-value {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-1);
+}
+
+.kpi-trend {
+  font-size: var(--text-xs);
+  display: flex;
+  align-items: center;
+}
+
+.kpi-trend.positive {
+  color: var(--success);
+}
+
+.kpi-trend.negative {
+  color: var(--error);
+}
+
+.kpi-trend i {
+  margin-right: var(--space-1);
+}
+
+/* Controls Row */
+.controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.indicator-select-container, .time-range-container, .view-controls {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Custom Select */
+.custom-select {
+  position: relative;
+  user-select: none;
+}
+
+.select-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  background-color: var(--neutral-50);
+  cursor: pointer;
+}
+
+.select-selected:hover {
+  border-color: var(--primary);
+}
+
+.select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 99;
+  background-color: var(--neutral-50);
+  border: 1px solid var(--neutral-300);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div {
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.select-items div:hover {
+  background-color: var(--neutral-200);
+}
+
+.select-items div.selected {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.select-items div input[type="checkbox"] {
+  margin-right: var(--space-2);
+}
+
+/* Charts Container */
+.charts-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart Wrapper */
+.chart-wrapper {
+  background-color: var(--neutral-50);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.chart-title {
+  font-size: var(--text-lg);
+  color: var(--neutral-800);
+}
+
+.chart-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.chart-container {
+  padding: var(--space-4);
+  position: relative;
+  height: 300px;
+}
+
+.chart-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.chart-loader p {
+  margin-top: var(--space-3);
+  color: var(--neutral-600);
+}
+
+/* Time Range Controls */
+.time-range-controls {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments are in main.css */
