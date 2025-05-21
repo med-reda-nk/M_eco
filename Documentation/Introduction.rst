@@ -1,5 +1,5 @@
-                        M-eco
-#Introduction
+Introduction
+============
 
 This project aims to develop a robust time series forecasting system to predict key economic indicators using historical data. By leveraging deep learning models and advanced preprocessing techniques, the project seeks to provide accurate short and medium-term forecasts that help analysts and decision-makers better understand economic trends and make informed predictions.
 
