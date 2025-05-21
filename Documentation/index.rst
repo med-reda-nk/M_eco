@@ -45,12 +45,8 @@ Lien vers github repository:  `Cliquez ici <https://github.com/med-reda-nk/M-eco
    :caption: Rapport du projet
 
    Introduction.rst
-   détection d'arme.rst
-   Reconnaissance d'Actions.rst
-   Analyse de la Densité de Foul.rst
+   Indicators.rst
+   Approaches and Models.rst
    Tracking.rst
-   Intégration et Architecture Système.rst
-   Évaluation et Validation.rst
-   Considération Éthiques et Légales.rst
-   Conclusions et Perspectives.rst
+   Future Improvements.rst
 
