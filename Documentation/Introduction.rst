@@ -1,9 +1,11 @@
 Introduction
 ============
 
+
 .. figure:: images/image11.jpg
    :width: 100%
    :alt: Economic forecasting illustration
+
 
 In an increasingly data-driven world, the ability to anticipate economic trends is vital for governments, businesses, and financial institutions. This project focuses on designing a **robust time series forecasting system** capable of predicting **key economic indicators**—such as GDP growth, inflation, unemployment rates, and industrial production—based on historical data patterns.
 
