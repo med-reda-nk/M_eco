@@ -56,9 +56,6 @@ All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE
 │   ├── src/
 │   │   ├── assets/
 │   │   ├── components/
-│   │   │   └── charts/
-│   │   │       ├── mainChart.js
-│   │   │       └── predictionChart.js
 │   │   ├── pages/
 │   │   ├── services/
 │   │   ├── utils/
