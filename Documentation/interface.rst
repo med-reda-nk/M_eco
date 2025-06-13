@@ -6,8 +6,6 @@ Test Interface
 Overview
 ========
 
-M-eco is a comprehensive web-based interface for analyzing and forecasting Moroccan economic indicators. Built with Streamlit, it provides an intuitive platform for exploring historical economic data and generating future predictions using advanced machine learning models.
-
 The application supports multiple economic indicators including foreign direct investment (FDI), inflation rates, unemployment statistics, commodity prices, and various socio-economic metrics specific to Morocco's economy.
 
 Features
@@ -283,19 +281,3 @@ Minimum Requirements
 * 4GB RAM
 * 1GB available disk space
 * Modern web browser
-
-Recommended Configuration
--------------------------
-
-* Python 3.8+
-* 8GB RAM or higher
-* GPU support for faster deep learning model execution
-* High-speed internet connection for model downloads
-
-Performance Optimization
-------------------------
-
-* Use SSD storage for faster data loading
-* Enable GPU acceleration for TensorFlow models
-* Limit analysis to recent data for large datasets
-* Close unused browser tabs to free memory
