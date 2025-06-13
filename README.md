@@ -4,100 +4,76 @@
 
 ## Project Overview
 
-This project aims to develop a **robust time series forecasting system** for predicting key Moroccan economic indicators using historical data. By leveraging advanced **deep learning architectures** and a systematic **hyperparameter optimization** strategy, the project provides accurate short- and medium-term forecasts that can aid analysts, economists, and policymakers in making data-informed decisions.
+This project aims to forecast **key Moroccan economic indicators** using historical time series data and **deep learning models**. The project features both a robust **backend prediction engine** and a **web-based interactive dashboard** for visualizing model results.
 
 ---
 
 ## Objectives
 
-- Collect and preprocess economic time series data from reliable Moroccan and global sources.
-- Implement and compare multiple deep learning models for time series forecasting.
-- Optimize each model using **Optuna** to achieve best-in-class performance.
-- Evaluate forecasting accuracy using RMSE, MAE, and MAPE.
-- Select the best-performing model for each economic indicator.
+- Predict indicators like GDP, inflation, and unemployment using DL models (LSTM, GRU, TCN, etc.).
+- Tune models using Optuna with cross-validation.
+- Develop a React-based web interface for forecast visualization.
+- Document all stages using Sphinx and Jupyter Notebooks.
 
 ---
 
 ## Models Implemented
 
-The project focuses exclusively on **deep learning approaches**. The following models were implemented and tuned:
+The project includes the following deep learning models:
 
-- **RNN (Recurrent Neural Network)**: A basic sequence model maintaining internal states, useful for short patterns.
-- **LSTM (Long Short-Term Memory)**: Addresses long-term dependencies and vanishing gradient issues.
-- **BiLSTM (Bidirectional LSTM)**: Processes sequences in both forward and backward directions for enhanced context.
-- **LSTM-CNN Hybrid**: Combines convolutional layers for feature extraction with LSTM for sequential learning.
-- **GRU (Gated Recurrent Unit)**: A more efficient alternative to LSTM with similar performance and fewer parameters.
-- **TCN (Temporal Convolutional Network)**: Uses dilated causal convolutions for parallel and long-range sequence modeling.
-- **Transformer**: Applies self-attention mechanisms to learn complex interdependencies without recurrence.
+- RNN
+- LSTM
+- BiLSTM
+- LSTM-CNN Hybrid
+- GRU
+- TCN (Temporal Convolutional Network)
+- Transformer
 
----
-
-##  Optimization Strategy
-
-All models were tuned using **Optuna**, a modern hyperparameter optimization library. Key techniques:
-
-- **Time series-aware cross-validation** to avoid leakage.
-- **Pruning and early stopping** to reduce training time.
-- **Search space design** for hyperparameters like learning rate, dropout, number of layers, etc.
-- **Model-specific objective functions** using metrics like RMSE and MAE.
-- **GPU acceleration** for faster parallel tuning.
-
----
-
-## Economic Indicators Forecasted
-
-Examples of economic indicators targeted in this project include:
-
-- Gross Domestic Product (GDP)
-- Inflation rate
-- Unemployment rate
-- Exchange rate
-- Industrial production index
-- Consumer Price Index (CPI)
+All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE.
 
 ---
 
 ## Project Structure
 
-```
-
-.
-├── data/                     # Raw and processed time series datasets
-├── models/                   # Saved model weights and architecture definitions
-├── notebooks/                # Jupyter notebooks for exploration and evaluation
-├── scripts/                  # Python scripts for training, evaluation, and preprocessing
-├── docs/
-│   └── source/
-│       ├── images/
-│       ├── introduction.rst
-│       ├── models.rst
-│       └── conf.py
-├── README.md                 # Project overview
-└── requirements.txt          # Python dependencies
-
-````
-
----
-
-## Technologies Used
-
-- Python (NumPy, Pandas, Matplotlib, Scikit-learn)
-- PyTorch / TensorFlow
-- Optuna
-- Sphinx (for documentation)
-- Jupyter Notebooks
-
----
-
-## Getting Started
-
 ```bash
-# Clone the repository
-git clone https://github.com/med-reda-nk/M_eco.git
-cd M_eco
-
-# Install dependencies
-pip install -r requirements.txt
-````
-
-
+.
+├── Dataset/
+│   └── Dataset_Timeseries.csv
+│
+├── Documentation/                 # Sphinx reStructuredText docs
+│   ├── images/
+│   ├── Approaches and Models.rst
+│   ├── Dashboard.rst
+│   ├── Future Improvements.rst
+│   ├── indicators.rst
+│   ├── Introduction.rst
+│   ├── conf.py
+│   └── index.rst
+│
+├── Interface/                     # Frontend (likely React)
+│   ├── public/
+│   ├── server.js                  # Express/Node.js backend
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   └── charts/
+│   │   │       ├── mainChart.js
+│   │   │       └── predictionChart.js
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── App.js
+│   │   └── main.js
+│   ├── index.html
+│   ├── package.json
+│   └── styles.css
+│
+├── Notebooks/
+│   ├── all-in-one.ipynb
+│   ├── by_indicator.ipynb
+│   ├── correlation_grouping-keynb.ipynb
+│
+├── .gitignore
+├── azurehoceyaml
+├── README.md
+└── requirements.txt
