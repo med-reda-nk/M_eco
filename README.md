@@ -56,6 +56,9 @@ All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE
 │   ├── src/
 │   │   ├── assets/
 │   │   ├── components/
+│   │   │   └── charts/
+│   │   │       ├── mainChart.js
+│   │   │       └── predictionChart.js
 │   │   ├── pages/
 │   │   ├── services/
 │   │   ├── utils/
@@ -74,3 +77,86 @@ All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE
 ├── azurehoceyaml
 ├── README.md
 └── requirements.txt
+```
+
+---
+
+## How to Run
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+cd Interface
+npm install
+```
+
+### Run Backend (if using `server.js`)
+
+```bash
+node server.js
+```
+
+### Run Frontend (React)
+
+```bash
+cd Interface
+npm start
+```
+
+---
+
+## Dataset
+
+The dataset is stored in `Dataset/Dataset_Timeseries.csv` and includes historical time series for multiple Moroccan economic indicators.
+
+---
+
+## Documentation
+
+Documentation is written using **Sphinx** with `.rst` files under `Documentation/`. To build it locally:
+
+```bash
+cd Documentation
+make html
+```
+
+---
+
+## Notebooks
+
+Exploratory and training notebooks are available under `/Notebooks`, including:
+
+- `all-in-one.ipynb`: full model pipeline
+- `by_indicator.ipynb`: training per indicator
+- `correlation_grouping-keynb.ipynb`: preprocessing and feature grouping
+
+---
+
+## Technologies Used
+
+- Python (Pandas, NumPy, Matplotlib, Scikit-learn)
+- Deep Learning: PyTorch / TensorFlow
+- Optuna (hyperparameter tuning)
+- Node.js (Express backend)
+- React (Frontend dashboard)
+- Sphinx (Technical documentation)
+- Jupyter Notebooks
+
+---
+
+## Requirements
+
+See [`requirements.txt`](./requirements.txt) for Python dependencies.
+
+---
+
+## Future Improvements
+
+See `Documentation/Future Improvements.rst` for planned enhancements such as:
+
+- Multivariate forecasting
+- Exogenous feature integration
+- Interactive user inputs in dashboard
+
+
