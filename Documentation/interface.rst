@@ -1,5 +1,5 @@
 ================================
-M-eco: Moroccan Economic Indicators Forecasting Test Interface
+Test Interface
 ================================
 
 
