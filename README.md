@@ -139,6 +139,7 @@ Exploratory and training notebooks are available under `/Notebooks`, including:
 - React (Frontend dashboard)
 - Sphinx (Technical documentation)
 - Jupyter Notebooks
+- streamlit : test interface
 
 ---
 
