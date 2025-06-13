@@ -1,6 +1,6 @@
 # Time Series Forecasting of Moroccan Economic Indicators
 
-![Forecasting](docs/source/images/image11.jpg)
+![Forecasting](Documentation/images/image11.jpg)
 
 ## Project Overview
 
