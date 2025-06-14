@@ -4,3 +4,4 @@ torch
 tensorflow
 numpy
 streamlit
+plotly
