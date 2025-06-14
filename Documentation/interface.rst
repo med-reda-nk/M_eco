@@ -129,35 +129,6 @@ The main interface displays:
 Forecasting Methods
 ===================
 
-Deep Learning Models
---------------------
-
-The application supports several advanced neural network architectures:
-
-**LSTM (Long Short-Term Memory)**
-  * Best for time series with long-term dependencies
-  * Suitable for GDP growth and long-term inflation trends
-
-**BiLSTM (Bidirectional LSTM)**
-  * Optimal for complex temporal patterns
-  * Used for exchange rates and volatile economic indicators
-
-**GRU (Gated Recurrent Unit)**
-  * Faster training with performance similar to LSTM
-  * Applied to commodity prices and unemployment rates
-
-**CNN-LSTM Hybrid**
-  * Effective for multi-scale temporal patterns
-  * Used for trade volumes and complex economic relationships
-
-**Transformer Networks**
-  * Attention-based temporal modeling
-  * Applied to financial markets and multi-variate forecasting
-
-**RNN (Recurrent Neural Network)**
-  * Simple temporal sequence modeling
-  * Used for basic trend analysis
-
 Model Selection Strategy
 ------------------------
 
