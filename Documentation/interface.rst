@@ -270,14 +270,3 @@ Common Issues
 
 **Memory Limitations**
   Use recent data filtering and limit concurrent forecasting operations.
-
-System Requirements
-===================
-
-Minimum Requirements
---------------------
-
-* Python 3.7 or higher
-* 4GB RAM
-* 1GB available disk space
-* Modern web browser
