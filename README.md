@@ -1,5 +1,9 @@
 # Time Series Forecasting of Moroccan Economic Indicators
 
+report link : https://m-eco.readthedocs.io/en/latest/#
+
+presentation link : https://prezi.com/view/n4lZLwrZd1GDdjR6g2D0/
+
 ![Forecasting](Documentation/images/image11.jpg)
 
 ## Project Overview
