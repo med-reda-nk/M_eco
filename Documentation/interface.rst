@@ -131,6 +131,11 @@ Getting Started
    
    Set your analysis parameters including forecast horizon and display options.
 
+.. figure:: images/interface.jpg
+   :width: 100%
+   :alt: Interface
+
+
 Interface Components
 --------------------
 
