@@ -1,6 +1,5 @@
 Moroccan economie analysis - Time Series
 ========================================
-MecoTS
 Étude académique avancée sur l’analyse des séries temporelles : Renforcement des compétences théoriques et pratiques.
 
 - **Superviseur** :  Mr. MASROUR Tawfik |linkedin_Masrour|
