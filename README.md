@@ -40,7 +40,7 @@ All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE
 ├── Dataset/
 │   └── Dataset_Timeseries.csv
 │
-├── Documentation/                 # Sphinx reStructuredText docs
+├── Documentation/                 
 │   ├── images/
 │   ├── Approaches and Models.rst
 │   ├── Dashboard.rst
@@ -48,11 +48,14 @@ All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE
 │   ├── indicators.rst
 │   ├── Introduction.rst
 │   ├── conf.py
-│   └── index.rst
+│   ├── index.rst
+│   ├── interface.rst
+│   ├── pipeline.rst
+│   └──uml.rst
 │
-├── Interface/                     # Frontend (likely React)
+├── Interface/                    
 │   ├── public/
-│   ├── server.js                  # Express/Node.js backend
+│   ├── server.js                  
 │   ├── src/
 │   │   ├── assets/
 │   │   ├── components/
@@ -67,8 +70,10 @@ All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE
 │
 ├── Notebooks/
 │   ├── all-in-one.ipynb
+│   ├── best-model-for-each-indicator.ipynb
 │   ├── by_indicator.ipynb
-│   ├── correlation_grouping-keynb.ipynb
+│   ├── correlation_grouping.ipynb
+│   ├── interface.py
 │
 ├── .gitignore
 ├── azurehoceyaml
