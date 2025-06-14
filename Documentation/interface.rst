@@ -56,21 +56,49 @@ Installation
 Prerequisites
 -------------
 
-Before installing M-eco, ensure you have Python 3.7 or higher installed on your system.
+Before installing **M-eco**, ensure you have the following installed:
+
+- Python 3.7 or higher.  
+  You can check your version using::
+
+    python --version
 
 Required Dependencies
 ---------------------
 
-* streamlit
-* pandas
-* numpy
-* plotly
+The core functionality of **M-eco** depends on the following packages:
 
-Optional Dependencies (for advanced features)
+- **streamlit** >= 1.0.0  
+  For building interactive web applications.
+- **pandas** >= 1.1.0  
+  For data analysis and manipulation.
+- **numpy** >= 1.18.0  
+  For numerical computations.
+- **plotly** >= 5.0.0  
+  For creating interactive visualizations.
+
+Install the required dependencies with::
+
+    pip install streamlit>=1.0.0 pandas>=1.1.0 numpy>=1.18.0 plotly>=5.0.0
+
+Optional Dependencies (for Advanced Features)
 ---------------------------------------------
 
-* tensorflow (for deep learning models)
-* scikit-learn (for data preprocessing)
+To enable machine learning and deep learning capabilities, install the following additional packages:
+
+- **tensorflow** >= 2.3.0  
+  For building and training deep learning models.
+- **scikit-learn** >= 0.24.0  
+  For preprocessing, model selection, and classical machine learning.
+
+Install optional dependencies with::
+
+    pip install tensorflow>=2.3.0 scikit-learn>=0.24.0
+
+Alternatively, to install all dependencies at once::
+
+    pip install -r requirements.txt
+
 
 Quick Start
 -----------
