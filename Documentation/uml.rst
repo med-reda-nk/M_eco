@@ -21,7 +21,7 @@ The use case diagram highlights the interactions between the user and the system
 .. figure:: images/use.jpg
    :alt: Use Case Diagram
    :align: center
-   :width: 80%
+   :width: 100%
 
    Figure 1: Use case diagram showing the functional scope of the system.
 
@@ -33,7 +33,7 @@ The activity diagram provides a high-level view of the logical execution steps:
 .. figure:: images/activity.jpg
    :alt: Activity Diagram
    :align: center
-   :width: 90%
+   :width: 70%
 
    Figure 2: Activity diagram representing the system’s operational flow from start to result presentation.
 
@@ -45,7 +45,7 @@ The sequence diagram shows how system components interact over time during a for
 .. figure:: images/sequence.jpg
    :alt: Sequence Diagram
    :align: center
-   :width: 90%
+   :width: 80%
 
    Figure 3: Sequence diagram illustrating the time-ordered communication between components during a user-initiated forecast.
 
