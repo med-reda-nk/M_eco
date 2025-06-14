@@ -30,7 +30,7 @@ Activity Diagram
 
 The activity diagram provides a high-level view of the logical execution steps:
 
-.. figure:: images/activity.jpg
+.. figure:: images/act.jpg
    :alt: Activity Diagram
    :align: center
    :width: 50%
