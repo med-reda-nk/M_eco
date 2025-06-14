@@ -33,7 +33,7 @@ The activity diagram provides a high-level view of the logical execution steps:
 .. figure:: images/activity.jpg
    :alt: Activity Diagram
    :align: center
-   :width: 70%
+   :width: 50%
 
    Figure 2: Activity diagram representing the system’s operational flow from start to result presentation.
 
@@ -45,7 +45,7 @@ The sequence diagram shows how system components interact over time during a for
 .. figure:: images/sequence.jpg
    :alt: Sequence Diagram
    :align: center
-   :width: 80%
+   :width: 90%
 
    Figure 3: Sequence diagram illustrating the time-ordered communication between components during a user-initiated forecast.
 
