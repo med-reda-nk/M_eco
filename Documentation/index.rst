@@ -47,6 +47,7 @@ Lien vers github repository:  `Cliquez ici <https://github.com/med-reda-nk/M-eco
    Introduction.rst
    Indicators.rst
    pipeline.rst
+   uml.rst
    Approaches and Models.rst
    interface.rst    
    Future Improvements.rst
