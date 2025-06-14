@@ -40,21 +40,21 @@ latex_elements = {
 }
 
 latex_documents = [
-    (master_doc, 'M-eco.tex', 'Documentation GuardVision',
+    (master_doc, 'M-eco.tex', 'Documentation M_eco',
      author, 'manual'),
 ]
 
 # -- Options pour le rendu man --------------------------------------------
 
 man_pages = [
-    (master_doc, 'M-eco', 'Documentation GuardVision',
+    (master_doc, 'M-eco', 'Documentation M_eco',
      [author], 1)
 ]
 
 # -- Options pour le rendu Texinfo ----------------------------------------
 
 texinfo_documents = [
-    (master_doc, 'M-eco', 'Documentation GuardVision',
+    (master_doc, 'M-eco', 'Documentation M_eco',
      author, 'GuardVision', 'Système de prédiction des indicateurs economiques du Maroc.',
      'Miscellaneous'),
 ]
