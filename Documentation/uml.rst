@@ -42,7 +42,7 @@ Sequence Diagram
 
 The sequence diagram shows how system components interact over time during a forecasting request:
 
-.. figure:: images/sequence.png
+.. figure:: images/sequence.jpg
    :alt: Sequence Diagram
    :align: center
    :width: 90%
@@ -54,7 +54,7 @@ Class Diagram
 
 The class diagram defines the internal structure, showing how components and classes are related:
 
-.. figure:: images/class.png
+.. figure:: images/class.jpg
    :alt: Class Diagram
    :align: center
    :width: 90%
