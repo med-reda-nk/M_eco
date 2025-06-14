@@ -39,7 +39,7 @@ All models are optimized with **Optuna** and evaluated using RMSE, MAE, and MAPE
 .
 ├── Dataset/
 │   ├── Dataset_Timeseries.csv
-│   └──predictions.csv/
+│   └──predictions.csv
 │
 ├── Documentation/                 
 │   ├── images/
