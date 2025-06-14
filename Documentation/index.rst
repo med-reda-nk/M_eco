@@ -1,8 +1,6 @@
 Moroccan economie analysis - Time Series
 ========================================
-Étude académique avancée sur l’analyse des séries temporelles : Renforcement des compétences théoriques et pratiques.
-
-Réalisé dans le cadre de la formation à l’ENSAM Meknès, filière IATD-SI
+Étude académique avancée sur l’analyse des séries temporelles : Renforcement des compétences théoriques et pratiques, réalisé dans le cadre de la formation à l’ENSAM Meknès, filière IATD-SI
 
 
 - **Superviseur** :  Mr. MASROUR Tawfik |linkedin_Masrour|
