@@ -28,7 +28,7 @@ Lien vers github repository:  `Cliquez ici <https://github.com/med-reda-nk/M-eco
 
 
 
-.. figure:: images/im.jpg
+.. figure:: images/download.png
    :width: 100%
    :alt: Alternative text for the image
    :name: logo
