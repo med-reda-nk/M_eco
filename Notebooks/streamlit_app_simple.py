@@ -105,7 +105,7 @@ def load_data():
 def load_predictions():
     """Charger les données de prévision"""
     try:
-        file_path = "predictions.csv"
+        file_path = "predictions1.csv"
         if not os.path.exists(file_path):
             st.error(f"❌ Fichier {file_path} non trouvé!")
             return None, None
