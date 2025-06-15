@@ -2,7 +2,7 @@
 Test Interface
 ================================
 
-Check the notebook: `interface Notebook <../Notebooks/streamlit_app_simple.py>`_
+Check the notebook: `interface code <../Notebooks/streamlit_app_simple.py>`_
 
 Overview
 ========
