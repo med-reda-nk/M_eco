@@ -56,19 +56,35 @@ In addition to evaluating individual deep learning models, this project explored
 
 Check the notebook: `Global Best Model Notebook <../Notebooks/global-best-modelipynb>`_
 
+.. figure:: images/global.png
+   :width: 100%
+   :alt: Global
+
 2. *Model Averaging Strategy*  
    The second approach uses the *average predictions* of the three top-performing models . By aggregating forecasts, this ensemble method aims to balance the strengths of different architectures, reduce variance, and improve generalization on unseen data.
 
 Check the notebook: `Top 3 models Notebook <../Notebooks/Top3_avr_models.ipynb>`_
+
+.. figure:: images/top3.png
+   :width: 100%
+   :alt: top 3
 
 3. *Indicator-specific Best Model Strategy*  
    The final and most granular approach assigns the *best-performing model for each individual indicator*. This method leverages the unique characteristics of each economic series, ensuring that model architecture aligns closely with the temporal complexity and behavior of the data it forecasts.
 
 Check the notebook: `by indicator Notebook <../Notebooks/best-model_for-each-indicator copie.ipynb>`_
 
+.. figure:: images/ind.png
+   :width: 100%
+   :alt: by ind
+
 4. *Correlation-based Group Modeling Strategy*  
    In this advanced approach, economic indicators are first grouped based on *pairwise correlation analysis. Indicators that exhibit strong temporal correlation (positive or negative) are clustered together and modeled jointly using a shared architecture. This allows the model to learn from **cross-indicator dependencies*, capture co-movements, and benefit from multivariate patterns—especially relevant in macroeconomic systems where variables influence one another (e.g., inflation and interest rates).
 
 Check the notebook: `Correlation Grouping Notebook <../Notebooks/correlation_grouping.ipynb>`_
+
+.. figure:: images/corr.png
+   :width: 100%
+   :alt: correlation
 
 By comparing results from these four strategies, we were able to assess not only the standalone performance of each model, but also the effectiveness of various deployment schemes in multi-indicator forecasting scenarios.
