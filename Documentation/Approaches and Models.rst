@@ -87,4 +87,6 @@ Check the notebook: `Correlation Grouping Notebook <../Notebooks/correlation_gro
    :width: 100%
    :alt: correlation
 
+
+
 By comparing results from these four strategies, we were able to assess not only the standalone performance of each model, but also the effectiveness of various deployment schemes in multi-indicator forecasting scenarios.
