@@ -2,7 +2,7 @@
 Test Interface
 ================================
 
-Check the code: `interface code <../Notebooks/streamlit_app_simple.py>`_
+Check the code: `interface code <https://github.com/med-reda-nk/M_eco/blob/main/Notebooks/streamlit_app_simple.py>`_
 
 Overview
 ========
