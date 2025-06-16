@@ -54,7 +54,7 @@ In addition to evaluating individual deep learning models, this project explored
 1. *Global Best Model Strategy*  
    In this approach, a single model—the one that achieved the best overall performance across all indicators—was selected to forecast every economic indicator in the dataset. This strategy emphasizes simplicity and uniformity, reducing complexity in deployment and maintenance.
 
-Check the notebook: `Global Best Model Notebook <../Notebooks/global-best-modelipynb>`_
+Check the notebook: `Global Best Model Notebook <https://github.com/med-reda-nk/M_eco/blob/main/Notebooks/global-best-modelipynb>`_
 
 .. figure:: images/global.png
    :width: 100%
@@ -63,7 +63,7 @@ Check the notebook: `Global Best Model Notebook <../Notebooks/global-best-modeli
 2. *Model Averaging Strategy*  
    The second approach uses the *average predictions* of the three top-performing models . By aggregating forecasts, this ensemble method aims to balance the strengths of different architectures, reduce variance, and improve generalization on unseen data.
 
-Check the notebook: `Top 3 models Notebook <../Notebooks/Top3_avr_models.ipynb>`_
+Check the notebook: `Top 3 models Notebook <https://github.com/med-reda-nk/M_eco/blob/main/Notebooks/Top3_avr_models.ipynb>`_
 
 .. figure:: images/top3.png
    :width: 100%
@@ -72,7 +72,7 @@ Check the notebook: `Top 3 models Notebook <../Notebooks/Top3_avr_models.ipynb>`
 3. *Indicator-specific Best Model Strategy*  
    The final and most granular approach assigns the *best-performing model for each individual indicator*. This method leverages the unique characteristics of each economic series, ensuring that model architecture aligns closely with the temporal complexity and behavior of the data it forecasts.
 
-Check the notebook: `by indicator Notebook <../Notebooks/best-model_for-each-indicator copie.ipynb>`_
+Check the notebook: `by indicator Notebook <https://github.com/med-reda-nk/M_eco/blob/main/Notebooks/best-model_for-each-indicator copie.ipynb>`_
 
 .. figure:: images/ind.png
    :width: 100%
@@ -81,7 +81,7 @@ Check the notebook: `by indicator Notebook <../Notebooks/best-model_for-each-ind
 4. *Correlation-based Group Modeling Strategy*  
    In this advanced approach, economic indicators are first grouped based on *pairwise correlation analysis. Indicators that exhibit strong temporal correlation (positive or negative) are clustered together and modeled jointly using a shared architecture. This allows the model to learn from **cross-indicator dependencies*, capture co-movements, and benefit from multivariate patterns—especially relevant in macroeconomic systems where variables influence one another (e.g., inflation and interest rates).
 
-Check the notebook: `Correlation Grouping Notebook <../Notebooks/correlation_grouping.ipynb>`_
+Check the notebook: `Correlation Grouping Notebook <https://github.com/med-reda-nk/M_eco/blob/main/Notebooks/correlation_grouping.ipynb>`_
 
 .. figure:: images/corr.png
    :width: 100%
